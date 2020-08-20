@@ -14,14 +14,20 @@
 # 
 # END_DESC
 
+#%% ErrorProcessOutOfSystemLimits
+import itertools
 def bigger_together(ints):
-    """
-        Returns difference between the largest and smallest values
-        that can be obtained by concatenating the integers together.
-    """
-    # you code here
-    return 0
+    number_list = list(itertools.permutations(ints))
+    number_list = [list(i) for i in number_list]
+    number_list = [int("".join([str(j) for j in i])) for i in number_list]
+    
+    return max(number_list) - min(number_list) 
 
+
+#%%
+
+bigger_together([123,991,323,321,329,121,921,125,999])
+#%%
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
     assert bigger_together([1,2,3,4]) == 3087, "4321 - 1234"
@@ -29,3 +35,5 @@ if __name__ == '__main__':
     assert bigger_together([0, 1]) == 9, "10 - 01"
     assert bigger_together([100]) == 0, "100 - 100"
     print('Done! I feel like you good enough to click Check')
+
+# %%
