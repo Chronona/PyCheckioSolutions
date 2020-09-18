@@ -14,8 +14,20 @@
 # END_DESC
 
 def reverse_ascending(items):
-    # your code here
-    return None
+    result = []
+    temp = []
+    for i in items:
+        if temp == []:
+            temp.append(i)
+        else:
+            if temp[-1] < i:
+                temp.append(i)
+            else:
+                result += temp[::-1]
+                temp = [i]
+    if temp != []:
+        result += temp[::-1]
+    return result
 
 
 if __name__ == '__main__':

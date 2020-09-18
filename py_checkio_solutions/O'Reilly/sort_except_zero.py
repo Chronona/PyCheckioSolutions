@@ -1,23 +1,25 @@
 #!/usr/local/bin/checkio --domain=py run sort-except-zero
 
-# Sort the numbers in an array. But the position of zeros should not be changed.
-# 
-# Input:A List.
-# 
-# Output:An Iterable (tuple, list, iterator ...).
-# 
-# 
-# END_DESC
-
 from typing import Iterable
 
 
 def except_zero(items: list) -> Iterable:
-    # your code here
-    return items
+    zero = []
+    for i in range(len(items)):
+        if items[i] == 0:
+            zero.append(i)
+    sorted_items = sorted(items)[len(zero) :]
+    result = []
+    for i in range(len(items)):
+        if i in zero:
+            result.append(0)
+        else:
+            result.append(sorted_items[0])
+            sorted_items = sorted_items[1:]
+    return result
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     print("Example:")
     print(list(except_zero([5, 3, 0, 0, 4, 1, 4, 0, 7])))
 
