@@ -15,7 +15,7 @@
 # 
 # 
 # END_DESC
-
+#%%
 WHITESPACE_STR = ' \t\n\r'
 
 
@@ -32,7 +32,8 @@ def parse_array(s, _w=WHITESPACE_STR, _sep=","):
             whitespace_flag = True
             continue
         if ch == "[":
-            if started_flag and not stack:
+            # (ori)if started_flag and not stack:
+            if started_flag and not stack == []:
                 raise ValueError("Wrong string.")
             if closed_flag or accumulator:
                 raise ValueError
@@ -42,23 +43,27 @@ def parse_array(s, _w=WHITESPACE_STR, _sep=","):
             else:
                 array = in_array
                 started_flag = True
-            stack.append(in_array.append)
+            # (ori) stack.append(in_array.append)
+            # stack.append(in_array.append(array))
         elif not started_flag:
             raise ValueError("Wrong string.")
         elif ch == "]":
-
-            if not stack:
+            # if not stack
+            if not stack == []:
                 raise ValueError("Wrong string.")
             if accumulator:
-                stack[-1](int(accumulator))
+                # (ori) stack[-1](int(accumulator))
+                array.append(int(accumulator))
                 accumulator = ""
-            stack.pop()
+            # (ori) stack.pop()
+            stack = []
             closed_flag = True
             sep_flag = False
             whitespace_flag = False
         elif ch in _sep:
             if accumulator:
-                stack[-1](int(accumulator))
+                # (ori) stack[-1](int(accumulator))
+                array.append(int(accumulator))
                 accumulator = ""
             elif closed_flag:
                 pass
@@ -77,6 +82,71 @@ def parse_array(s, _w=WHITESPACE_STR, _sep=","):
     else:
         raise ValueError("Wrong string")
 
+#%% 自分で書き直す。stackいる？
+
+WHITESPACE_STR = ' \t\n\r'
+
+
+def parse_array(s, _w=WHITESPACE_STR, _sep=","):
+    # 出力する配列
+    array = None
+    # 数字の一時保存
+    accumulator = ""
+    # 格納しているのが"]"
+    closed_flag = False
+    # 格納しているのが","
+    sep_flag = False
+    # 格納しているのが" "
+    whitespace_flag = False
+    # 格納しているのが"["
+    started_flag = False
+
+
+    for ch in s:
+        if ch in _w:
+            # chがスペースなら無視
+            whitespace_flag = True
+            continue
+        if ch == "[":
+            # chが"["で
+            if started_flag:
+                raise ValueError("Wrong string.")
+            if closed_flag or accumulator:
+                raise ValueError
+            in_array = []
+            else:
+                array = in_array
+                started_flag = True
+        elif not started_flag:
+            raise ValueError("Wrong string.")
+        elif ch == "]":
+                raise ValueError("Wrong string.")
+            if accumulator:
+                array.append(int(accumulator))
+                accumulator = ""
+            closed_flag = True
+            sep_flag = False
+            whitespace_flag = False
+        elif ch in _sep:
+            if accumulator:
+                array.append(int(accumulator))
+                accumulator = ""
+            elif closed_flag:
+                pass
+            else:
+                raise ValueError("Wrong string.")
+            sep_flag = True
+            closed_flag = False
+            whitespace_flag = False
+        else:
+            if whitespace_flag and accumulator or closed_flag:
+                raise ValueError
+            accumulator += ch
+        whitespace_flag = False
+    if not array is None:
+        return array
+    else:
+        raise ValueError("Wrong string")
 
 if __name__ == "__main__":
     #These "asserts" using only for self-checking and not necessary for auto-testing
@@ -167,3 +237,4 @@ if __name__ == "__main__":
         assert False, "Here should be only one array."
     except ValueError:
         pass
+# %%

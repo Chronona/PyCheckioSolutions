@@ -14,11 +14,16 @@
 # END_DESC
 
 from typing import Iterable
+import statistics
 
 def median_three(els: Iterable[int]) -> Iterable[int]:
-    # your code here
-    return []
-
+    result = []
+    for i in range(len(els)):
+        if i < 2:
+            result.append(els[i])
+        else:
+            result.append(statistics.median([els[i], els[i - 1], els[i - 2]]))
+    return result
 
 if __name__ == '__main__':
     print("Example:")
