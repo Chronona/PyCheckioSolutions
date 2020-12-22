@@ -1,26 +1,9 @@
 #!/usr/local/bin/checkio --domain=py run end-of-other
 
-# For language training our Robots want to learn about suffixes.
-# 
-# In this task, you are given a set of words in lower case.    Check whether there is a pair of words, such that one word is the end of another (a suffix of another).    For example: {"hi", "hello", "lo"} -- "lo" is the end of "hello", so the result is True.
-# 
-# Input:Words as a set of strings.
-# 
-# Output:True or False, as a boolean.
-# 
-# Precondition:2 ≤ len(words) < 30
-# all(re.match(r"\A[a-z]{1,99}\Z", w) for w in words)
-# 
-# 
-# END_DESC
 
-#%%
 def checkio(words_set):
     for word in words_set:
-        temp = [i for i in words_set if len(i) >= len(word)]
-        suffixes = [i[- len(word):] for i in temp]
-        print(suffixes)
-        if len([i for i in suffixes if i == word]) > 1:
+        if len([i for i in words_set if i.endswith(word)]) > 1:
             return True
     return False
 
@@ -35,4 +18,3 @@ if __name__ == '__main__':
     assert checkio({"one"}) == False, "Only One"
     assert checkio({"helicopter", "li", "he"}) == False, "Only end"
     print("Done! Time to check!")
-# %%
