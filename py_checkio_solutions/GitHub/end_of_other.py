@@ -14,8 +14,15 @@
 # 
 # END_DESC
 
+#%%
 def checkio(words_set):
-    return True or False
+    for word in words_set:
+        temp = [i for i in words_set if len(i) >= len(word)]
+        suffixes = [i[- len(word):] for i in temp]
+        print(suffixes)
+        if len([i for i in suffixes if i == word]) > 1:
+            return True
+    return False
 
 #These "asserts" using only for self-checking and not necessary for auto-testing
 if __name__ == '__main__':
@@ -28,3 +35,4 @@ if __name__ == '__main__':
     assert checkio({"one"}) == False, "Only One"
     assert checkio({"helicopter", "li", "he"}) == False, "Only end"
     print("Done! Time to check!")
+# %%

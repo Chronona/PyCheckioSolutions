@@ -12,12 +12,33 @@
 # 
 # END_DESC
 
+#%%
 from typing import Dict
 
+# 検出数チェックは後回し
 
 def count_comprehensions(source: str) -> Dict[str, int]:
-    ...
+    print("___\n", source)
+    source_script = eval(source)
+    print(source_script)
+    if isinstance(source_script, list):
+        print("LIST")
+        return dict({'ListComp': 1})
+    elif isinstance(source_script, set):
+        print("SET")
+        return dict({'SetComp': 1})
+    elif isinstance(source_script, dict):
+        print("DICT")
+        return dict({'DictComp': 1})
+    elif isinstance(source_script, object):
+        print("GEN")
+        return dict({'GeneratorExp': 1})
 
+#%%%
+# list内のジェネレーターが判別できない...
+count_comprehensions('[x for x in (n ** 2 for n in range(100)) if x % 8]')
+
+#%%
 
 if __name__ == '__main__':
     from textwrap import dedent
@@ -109,3 +130,4 @@ if __name__ == '__main__':
                                  'GeneratorExp'}, 'Wrong dict key'
         assert {k: v for k, v in counts.items() if v != 0} == answer, n
     print('Well done! Click on "Check" for more tests.')
+# %%
