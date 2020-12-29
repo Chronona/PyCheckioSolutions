@@ -19,38 +19,59 @@
 # END_DESC
 #%%
 from typing import List, Tuple
+import itertools
+
+import numpy as np
+
+
+
+
+
+def count_bench_ren(benches, dist):
+    length = 0
+    start = benches[0][0]
+    for i in range(len(benches)):
+        b_len = benches[i][1]
+        if length == 0:
+            length += benches[i][1]
+            start += b_len
+        elif start + dist > benches[i][0]:
+            pass
+        else:
+            length += b_len
+            start = benches[i][0] + b_len
+
+    return length
 
 def park_benches(benches: List[Tuple[int, int]], dist: int) -> int:
     if len(benches) == 1:
         return benches[0][1]
 
-    ans1 = count_bench_ren(benches, dist)
-    ans2 = count_bench_ren(benches[1:], dist)
+    result = 0
     
-    print(ans1, ans2)
-    return max(ans1, ans2)
+    for i in range(1, len(benches) + 1):
+        com_list = itertools.combinations(benches, i)
+        for i in com_list:
+            temp = count_bench_ren(np.array(i), dist)
+            if temp > result:
+                result = temp
+    import sys
 
-def count_bench_ren(benches, dist):
-    print(benches)
-    length = 0
-    start = benches[0][0]
-    for i in range(len(benches)):
-        b_len = benches[i][1]
-        print("s:{}: n:{} b:{} l:{}".format(start, benches[i][0], b_len, length))
-        if length == 0:
-            length += benches[i][1]
-            start += b_len
-        elif start + dist > benches[i][0]:
-            print("ng")
-            pass
-        else:
-            print("ok")
-            length += b_len
-            start = benches[i][0] + b_len
+    print("{}{: >25}{}{: >10}{}".format('|','Variable Name','|','Memory','|'))
+    print(" ------------------------------------ ")
+    for var_name in dir():
+        if not var_name.startswith("_"):
+            print("{}{: >25}{}{: >10}{}".format('|',var_name,'|',sys.getsizeof(eval(var_name)),'|'))
+    return result
 
-    return length
+
+        
+
+
+
+
 #%%
-park_benches([(1, 3), (6, 5), (13, 4)], 3)
+park_benches([[1, 6], [10, 7], [20, 7], [31, 6], [40, 7], [51, 2], [57, 1], [62, 1], [67, 2], [72, 4], [79, 1], [81, 4], [87, 2], [90, 2], [96, 7], [106, 1], [110, 5], [116, 3], [122, 4], [130, 6], [139, 4], [146, 5], [155, 2], [160, 4], [167, 4], [173, 3], [177, 7], [188, 2], [194, 2], [198, 5], [207, 5], [216, 7], [225, 2], [228, 6], [238, 7], [249, 7], [257, 5], [265, 7], [275, 4], [283, 5], [292, 2], [296, 2], [299, 1], [302, 2], [307, 1], [309, 1], [314, 5], [321, 5], [328, 5], [334, 4]], 3)
 #%%
 
 
