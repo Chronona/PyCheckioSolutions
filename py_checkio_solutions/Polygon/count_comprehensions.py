@@ -14,30 +14,47 @@
 
 #%%
 from typing import Dict
-
+import ast
+from pprint import pprint
 # 検出数チェックは後回し
 
 def count_comprehensions(source: str) -> Dict[str, int]:
-    print("___\n", source)
-    source_script = eval(source)
-    print(source_script)
-    if isinstance(source_script, list):
-        print("LIST")
-        return dict({'ListComp': 1})
-    elif isinstance(source_script, set):
-        print("SET")
-        return dict({'SetComp': 1})
-    elif isinstance(source_script, dict):
-        print("DICT")
-        return dict({'DictComp': 1})
-    elif isinstance(source_script, object):
-        print("GEN")
-        return dict({'GeneratorExp': 1})
-
+    source_tree = ast.parse(source)
+    pprint(ast.dump(source_tree))
 #%%%
-# list内のジェネレーターが判別できない...
 count_comprehensions('[x for x in (n ** 2 for n in range(100)) if x % 8]')
 
+#%%
+source = """
+[i for i in range(5)]
+"""
+class PrintNodeVisitor(ast.NodeVisitor):
+    def visit(self, node):
+        print(type(node))
+        print(node)
+        return super().visit(node)
+tree = ast.parse(source)
+#%%
+PrintNodeVisitor().visit(tree)
+#%%
+class PrintExprNodePisitor(ast.NodeVisitor):
+    def visit_Name(self, node):
+        print('visited')
+
+    def visit_Expr(self, node):
+        print('visitedd')
+
+PrintExprNodePisitor().visit(tree)
+
+#%%
+ast.dump(ast.parse('[x for x in numbers]', mode='eval'))
+
+#%%
+def get_tree(txt):
+    return ast.dump(ast.parse(txt, mode='eval'))
+
+#%%
+get_tree('[n ** 2 for n in range(5)]')
 #%%
 
 if __name__ == '__main__':
