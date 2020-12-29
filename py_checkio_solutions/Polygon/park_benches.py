@@ -21,6 +21,8 @@
 from typing import List, Tuple
 
 def park_benches(benches: List[Tuple[int, int]], dist: int) -> int:
+    if len(benches) == 1:
+        return benches[0][1]
 
     ans1 = count_bench_ren(benches, dist)
     ans2 = count_bench_ren(benches[1:], dist)
@@ -34,17 +36,17 @@ def count_bench_ren(benches, dist):
     start = benches[0][0]
     for i in range(len(benches)):
         b_len = benches[i][1]
-        print(start, b_len)
+        print("s:{}: n:{} b:{} l:{}".format(start, benches[i][0], b_len, length))
         if length == 0:
             length += benches[i][1]
             start += b_len
-        elif start + b_len + dist >= benches[i][0]:
-            print("ng {}+{}+{}={}".format(start, b_len, dist, start+b_len+dist))
+        elif start + dist > benches[i][0]:
+            print("ng")
+            pass
         else:
-            print("ok {}+{}+{}={}".format(start, b_len, dist, start+b_len+dist))
+            print("ok")
             length += b_len
-            print("b_len is {}".format(b_len))
-            start += b_len
+            start = benches[i][0] + b_len
 
     return length
 #%%
