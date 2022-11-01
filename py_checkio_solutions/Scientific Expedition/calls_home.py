@@ -1,4 +1,4 @@
-#!/usr/local/bin/checkio --domain=py run calls-home
+#!/home/user/.local/bin/checkio --domain=py run calls-home
 
 # pre.format {        background-color: #EBEDED;        margin: 5px;        padding: 3px;        border: solid 1px #737370;        border-radius: 3px;        --webkit-border-radius: 3px;    }    .rules li {        list-style-type: circle;        margin-left: 40px;    }Nicola believes that Sophia calls Home too much and her phone bill is much too expensive.    He took the bills for Sophia's calls from the last few days and wants to calculate how much did it cost.
 # 

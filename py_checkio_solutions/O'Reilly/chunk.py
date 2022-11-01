@@ -1,5 +1,19 @@
-#!/usr/local/bin/checkio --domain=py run chunk
+#!/home/user/.local/bin/checkio --domain=py run chunk
 
+# You have a lot of work to do, so you might want to split it into smaller pieces. This way you'll know which piece you'll do on Monday, which will be for Tuesday and so on.
+# 
+# Split a list into smaller lists of the same size (chunks). The last chunk can be smaller than the default chunk-size. If the list is empty, then you shouldn't have any chunks at all.
+# 
+# 
+# 
+# Input:Two arguments. A List and chunk size.
+# 
+# Output:An Iterable with chunked Iterable.
+# 
+# Precondition:chunk-size > 0
+# 
+# 
+# END_DESC
 
 from typing import Iterable
 

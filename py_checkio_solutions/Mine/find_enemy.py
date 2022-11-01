@@ -1,36 +1,33 @@
-#!/usr/local/bin/checkio --domain=py run find-enemy
+#!/home/user/.local/bin/checkio --domain=py run find-enemy
 
-# ﻿Find distance and direction to enemy in a HEX-grid
+# Find the distance and relative direction to the enemy in a HEX-grid.
 # 
-# HEX-grid
-# 
-# 
-# 
-# Absolute Directions
+# HEX-grid (hexagonal grid) is a coordinate system, like square grid. To find distancebetween two cells you don't need to find exact path from one to another, but correctly work with their coordinates.Another approach to calculate distance isto notice that all cells strict around your cell form a kind of circle and are ondistance 1 from your cell, the cells around all previous cells (next "circle") areon distance 2 etc.In this mission the field from "A1" to "Z9" is used for placing youand enemy, but you may need to use coordinates "outside" this field for your calculations.Be attentive to cases when your position is on the edge of the field.
 # 
 # 
 # 
-# Relative Directions
-# 
-# * if your absolute directions is "N"
+# Absolute Directions. If we take any cell, the cell above it is always to the    north ("N"), below - to the south ("S") etc.
 # 
 # 
 # 
-# Input:three arguments, your corrent coordinates, your current absolute direction, enemy's coordinates.
-# 
-# Output:list, relative direction to the enemy and distance to the enemy .
+# Relative Directions depends of your absolute direction. if your absolute direction is "N",    relative directions are the following. So all cells around specific cell form    4 "sectors": forward, right, back and left. Cells considered as present in this    sectors, even if they are "outside" of our field.
 # 
 # 
 # 
+# But when your absolute direction is for example "SE" these "sectors" rotate and the cell    in front of your cell will be to the south-east, and the north absolute    direction will be in left sector.
 # 
-# How it is used:War-game design using hex-grid
+# Input:Three arguments: your current coordinates, your current absolute directions, and enemy's coordinates.
+# 
+# Output:A list with relative direction and distance to the enemy.
 # 
 # 
 # 
-# Precondition:
-# 'A1' ≤ coordinates ≤ 'Z9'.
-# direction in ('N', 'NE', 'SE', 'S', 'SW', 'NW').
-# your coordinates ≠ enemy's coordinates.
+# 
+# How it is used:War-game design uses hex-grid.
+# 
+# 
+# 
+# Preconditions:'A1' ≤ coordinates ≤ 'Z9';direction in ('N', 'NE', 'SE', 'S', 'SW', 'NW');your coordinates ≠ enemy's coordinates.
 # 
 # 
 # END_DESC

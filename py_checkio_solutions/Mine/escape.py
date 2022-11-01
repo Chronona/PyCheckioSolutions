@@ -1,4 +1,4 @@
-#!/usr/local/bin/checkio --domain=py run escape
+#!/home/user/.local/bin/checkio --domain=py run escape
 
 # There is an open jar and a fly inside it.    That fly is flying from side to side frantically because it really wants to get away from there.    Your task is to estimate whether it will succeed in its attempts (return True) or not (return False).
 # 

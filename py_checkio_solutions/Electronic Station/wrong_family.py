@@ -1,4 +1,4 @@
-#!/usr/local/bin/checkio --domain=py run wrong-family
+#!/home/user/.local/bin/checkio --domain=py run wrong-family
 
 # Michael always knew that there was something wrong with his family. Many strangers were introduced to him as part of it.
 # 
@@ -8,14 +8,14 @@
 # 
 # You have a list of family ties between father and son. Each element on this list has two elements. The first is the father's name, the second is the son's name. All names in the family are unique. Check if the family tree is correct. There are no strangers in the family tree. All connections in the family are natural.
 # 
-# Input:list of lists. Each element has two strings. The list has at least one element
+# Input:A list of lists. Each element has two strings.    The list has at least one element
 # 
-# Output:bool. Is the family tree correct.
-# 
-# 
+# Output:Bool. Is the family tree correct.
 # 
 # 
-# Precondition:1<= len(tree)<100
+# 
+# 
+# Precondition:1 <= len(tree) < 100
 # 
 # 
 # END_DESC

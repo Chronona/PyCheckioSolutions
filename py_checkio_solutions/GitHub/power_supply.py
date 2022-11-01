@@ -1,4 +1,4 @@
-#!/usr/local/bin/checkio --domain=py run power-supply
+#!/home/user/.local/bin/checkio --domain=py run power-supply
 
 # You are given the power grid and power-plant's information    (plant-number and supply-range). You should find out which cities blacked out.    A power plant can supply itself and connected cities with power, but the range is    limited.
 # 
@@ -8,7 +8,7 @@
 # 
 # Output:A set of strings.         Each string is the name of a blacked out city.
 # 
-# Precondition:len(set(chain(*networks)))<= 25
+# Precondition:len(set(chain(*networks))) <= 25
 # 
 # 
 # END_DESC

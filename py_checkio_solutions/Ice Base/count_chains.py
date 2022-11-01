@@ -1,4 +1,4 @@
-#!/usr/local/bin/checkio --domain=py run count-chains
+#!/home/user/.local/bin/checkio --domain=py run count-chains
 
 # In this mission you must count chains.
 # 
@@ -8,6 +8,13 @@
 # NOTE:
 # 
 # Only one circle counts as one group.
+# 
+# Input:A list of details of the circle.Details of the circle is a tuple of three integers(X-coordinate, Y-coordinate, radius).
+# 
+# Output:An integer.
+# 
+# Precondition:
+# -10 ≤ x(, y) coordinate ≤ 101 ≤ radius ≤ 10
 # 
 # 
 # END_DESC

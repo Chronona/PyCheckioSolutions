@@ -1,6 +1,6 @@
-#!/usr/local/bin/checkio --domain=py run morse-encoder
+#!/home/user/.local/bin/checkio --domain=py run morse-encoder
 
-# Your task is to encrypt the text message using theMorse code. The input text will consist of letters (in uppercase and lowercase), numbers and whitespaces. There won't be any special characters ('&', '?', '#' etc.)
+# Your task is to encrypt the text message using theMorse code.    The input text will consist of letters (in uppercase and lowercase), numbers and whitespaces.    There won't be any special characters ('&', '?', '#' etc.)
 # You need to use 3 spaces between words and 1 space between each letter of each word.
 # 
 # 
@@ -10,7 +10,7 @@
 # Output:The same string, but encrypted.
 # 
 # Precondition:
-# 0<len(text)<50
+# 0 < len(text) < 50
 # Only English letters (in uppercase and lowercase), numbers and whitespaces.
 # 
 # 

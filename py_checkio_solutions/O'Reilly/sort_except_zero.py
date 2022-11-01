@@ -1,4 +1,17 @@
-#!/usr/local/bin/checkio --domain=py run sort-except-zero
+#!/home/user/.local/bin/checkio --domain=py run sort-except-zero
+
+# Sort the numbers in a list. But the position of zeros should not be changed.
+# 
+# Input:A List.
+# 
+# Output:An Iterable (tuple, list, iterator ...).
+# 
+# Precondition:
+# 
+# All numbers are positive.
+# 
+# 
+# END_DESC
 
 from typing import Iterable
 

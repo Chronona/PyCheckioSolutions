@@ -1,4 +1,4 @@
-#!/usr/local/bin/checkio --domain=py run searchlights
+#!/home/user/.local/bin/checkio --domain=py run searchlights
 
 # How many vertices ofthe regular polygonscan you see in the light?
 # 
@@ -12,7 +12,15 @@
 # 
 # NOTE:
 # 
-# The Regular polygons is vertical symmetry.Don't count vertices with negative coordinates. (e.g. (-1, 2), (2, -3), (-3, -4))No test case where the circumference is close to the vertices.
+# The Regular polygons is vertical symmetry.Don't count vertices with negative coordinates. (e.g. (-1, 2), (2, -3), (-3, -4))No test case where the circumference is close to the vertices.Input:two arguments:The regular polygons (a list of tuples of 4 integers)The circles (a list of tuples of 3 integers)
+# 
+# Output:The number of vertices (an integer).
+# 
+# Precondition:length of edge ≥ 1length of radius ≥ 1Regular polygons doesn't have any common vertex.
+# 
+# How it is used:To draw a regular polygon.
+# 
+# 
 # END_DESC
 
 def searchlights(polygons, lights):

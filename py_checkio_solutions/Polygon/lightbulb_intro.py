@@ -1,4 +1,4 @@
-#!/usr/local/bin/checkio --domain=py run lightbulb-intro
+#!/home/user/.local/bin/checkio --domain=py run lightbulb-intro
 
 # With this mission I want to start a series of missions with light bulbs. They will help you understand the concept of processes and evaluation of the processes’ performance. Instead of light bulbs, in real life, there may be equipment, the effectiveness of which must be calculated, or workers who go to work, and their wages must be calculated.
 # 

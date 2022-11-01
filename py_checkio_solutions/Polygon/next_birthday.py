@@ -1,13 +1,23 @@
-#!/usr/local/bin/checkio --domain=py run next-birthday
+#!/home/user/.local/bin/checkio --domain=py run next-birthday
 
 # You have to write a function that receives a "today" date and a dictionary of family birthdates,    and for the person(s) whose birthday is next (today or later),    return the number of days between "today" and that birthday, and the age they will be.
-#
+# 
 # Note about leap days:If someone is born on February 29th, then he or she will    celebrate birthdays on March 1st when necessary.
-#
-# Input:two arguments:a tuple of three integers (year, month, day) representing a datea dictionary: keys are string and values are dates.Output:an integer and a dictionary (keys are string and values are integers).
-#
-#
+# 
+# Input:Two arguments:a tuple of three integers (year, month, day) representing a date;a dictionary: keys are string and values are dates.Output:An integer and a dictionary (keys are string and values are integers).
+# 
+# Preconditions:All the dates are valid (see the datetime module) and the next birthdays are valid for everyone.Everyone is alive:all(today >= birthdate for birthdate in birthdates.values())birthdatesis never empty.
+# 
+# 
 # END_DESC
+
+#
+
+#
+
+#
+#
+
 #%%
 
 from typing import Dict, Tuple

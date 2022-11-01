@@ -1,4 +1,4 @@
-#!/usr/local/bin/checkio --domain=py run yaml-complex-structure
+#!/home/user/.local/bin/checkio --domain=py run yaml-complex-structure
 
 # The 4th task in the series of missions about the YAML format will be devoted to a complex structure.
 # 

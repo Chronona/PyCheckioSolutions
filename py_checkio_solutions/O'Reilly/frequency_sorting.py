@@ -1,5 +1,17 @@
-#!/usr/local/bin/checkio --domain=py run frequency-sorting
+#!/home/user/.local/bin/checkio --domain=py run frequency-sorting
 
+# Sort the given list so that its    elements end up in the decreasing frequency order, that is, the number of    times they appear in elements. If two elements have the same frequency, they    should end up according to their natural order. For example: [5, 2, 4, 1, 1, 1, 3] ==> [1, 1, 1, 2, 3, 4, 5].
+# 
+# If you want to practice more with the similar case, trySort Array by Element Frequencymission.
+# 
+# Input:List of integers.
+# 
+# Output:List or another Iterable (tuple, iterator, generator).
+# 
+# Preconditions:list length <= 100;max number <= 100.
+# 
+# 
+# END_DESC
 
 import collections
 

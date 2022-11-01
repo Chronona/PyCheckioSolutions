@@ -1,4 +1,4 @@
-#!/usr/local/bin/checkio --domain=py run cookies
+#!/home/user/.local/bin/checkio --domain=py run cookies
 
 # This is pretty much a technical mission.
 # 

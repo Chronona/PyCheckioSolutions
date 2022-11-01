@@ -1,4 +1,4 @@
-#!/usr/local/bin/checkio --domain=py run hidden-word
+#!/home/user/.local/bin/checkio --domain=py run hidden-word
 
 # .story img {        float: left;        /*padding: 10px;*/        margin: 10px;        border: black;        /*box-shadow: 0 0 20px 10px rgba(0, 0, 0, 1);*/        /*-moz-box-shadow: 0 0 20px 10px rgba(0, 0, 0, 1);*/        /*-webkit-box-shadow: 0 0 20px 10px rgba(0, 0, 0, 1);*/    }JABBERWOCKY'Twas brillig, and the slithy toves
 # Did gyre and gimble in the wabe;
@@ -57,8 +57,8 @@
 # Output:The coordinates of the word.
 # 
 # Precondition:The word is given in lowercase
-# 0<|word|<10
-# 0<|rhyme|<300
+# 0 < |word| < 10
+# 0 < |rhyme| < 300
 # 
 # 
 # END_DESC

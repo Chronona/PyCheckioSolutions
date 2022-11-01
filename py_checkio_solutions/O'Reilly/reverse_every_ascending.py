@@ -1,12 +1,12 @@
-#!/usr/local/bin/checkio --domain=py run reverse-every-ascending
+#!/home/user/.local/bin/checkio --domain=py run reverse-every-ascending
 
-# Create and return a new iterable that contains the same elements as the argument iterable  items, but with the reversed order of the elements inside every maximal strictly ascending sublist. This function should not modify the contents of the original iterable.
+# Create and return a newIterablethat    contains the same elements as the argument listitems,    but with the reversed order of the elements inside every maximal strictly ascending subsequence.    This function should not modify the contents of the original list.
 # 
-# Input:Iterable
+# Input:List of integers.
 # 
-# Output:Iterable
+# Output:Iterable of integers.
 # 
-# Precondition:Iterable contains only ints
+# Precondition:List contains only integers.
 # 
 # The mission was taken from Python CCPS 109 Fall 2018. It’s being taught for Ryerson Chang School of Continuing Education byIlkka Kokkarinen
 # 

@@ -1,4 +1,4 @@
-#!/usr/local/bin/checkio --domain=py run remove-brackets
+#!/home/user/.local/bin/checkio --domain=py run remove-brackets
 
 # Before solving this mission, you can try to solve the"Brackets"mission.
 # 

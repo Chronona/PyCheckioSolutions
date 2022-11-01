@@ -1,6 +1,8 @@
-#!/usr/local/bin/checkio --domain=py run median-of-three
+#!/home/user/.local/bin/checkio --domain=py run median-of-three
 
-# Given   an iterable of ints , create and return a new  iterable  whose first two elements are the same as in items, after which each element equals the median of the three elements in the original list ending in that position.
+# Given   an iterable of ints , create and return a new  iterable  whose first two elements are the same as in items, after which each element equals the median element in the sorted list of the three elements from the original list. Third element in sorted list is current position (position 2 and go on), first two elements are going before the third element in the original list.
+# 
+# 
 # 
 # Wait...You don't know what the "median" is? Go check out the separate"Median"mission on CheckiO.
 # 

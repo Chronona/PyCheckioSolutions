@@ -1,4 +1,4 @@
-#!/usr/local/bin/checkio --domain=py run parse-array
+#!/home/user/.local/bin/checkio --domain=py run parse-array
 
 # In this task you you already have the solution. The problem is that it has a bug and you must try to find and fix it.    "import", "exec" and "eval" don't work for this task.
 # 
@@ -10,11 +10,12 @@
 # 
 # Precondition:
 # depth < 5
-# ∀ x ∈ data : -1000<x<1000
+# ∀ x ∈ data : -1000 < x < 1000
 # 
 # 
 # 
 # END_DESC
+
 #%%
 WHITESPACE_STR = ' \t\n\r'
 
